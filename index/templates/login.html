@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>
+    {% block title %}
+      LOGIN
+    {% endblock %}
+  </title>
+  <link rel="stylesheet" href="{% static 'css/login_register.css' %}">
+  <style>
+    {% block style %}
+      #container .thead .login_a{
+        color: black;
+        border-bottom: 2px solid black;
+        padding-bottom: 6px;
+      }
+    {% endblock %}
+  </style>
+  <script>
+
+  </script>
+  {% block js%}
+  {% endblock %}
+</head>
+<body>
+  <div id="container">
+    <!--1 背景图片-->
+    <img src="{% static 'images/login.jpg' %}">
+    <!--2 标题-->
+    <h2>老人与海</h2>
+    <!--3 登录界面-->
+    <div class="login">
+      <!--3.1 表头-->
+      {% block form %}
+      <div class="thead">
+        <a href="/login/" class="login_a">快捷登录</a>
+        <a href="/register/" class="regsiter_a">快捷注册</a>
+      </div>
+
+      <!--3.2表单-->
+        <form action="/login/" method="post">
+          {% csrf_token %}
+          {% for fields in forms%}
+          <div class="form-line">
+            <p>{{fields.label}}</p>
+            <div>{{fields}}</div>
+          </div>
+          {% endfor%}
+          <div align="center" style="margin-bottom: 10px">{{msg}}</div>
+          <div class="form-line">
+            <p></p>
+            <div>
+              <p>
+                <a href="#">忘记密码</a>
+                <a href="#">快捷登录</a>
+              </p>
+              <input type="checkbox" name="isSave" class="isSave" checked="checked">记住密码
+            </div>
+          </div>
+          <div class="form-line">
+            <p></p>
+            <div>
+              <input type="submit" value="登录" class="btnLogin">
+            </div>
+          </div>
+        </form>
+      {% endblock%}
+    </div>
+  </div>
+</body>
+</html>

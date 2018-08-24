@@ -1,0 +1,58 @@
+{% extends 'login.html'%}
+
+{% block title %}
+  REGISTER
+{% endblock%}
+{% block style %}
+      #container .thead .regsiter_a{
+        color: black;
+        border-bottom: 2px solid black;
+        padding-bottom: 6px;
+      }
+     #container .xieyi{
+        font-size: 10px;
+        color: #ccc;
+      }
+{% endblock %}
+
+{% block js %}
+  <script src="/static/js/jquery-1.11.3.js"></script>
+  <script src ='/static/js/register.js'></script>
+  <script src ='/static/js/comment.js'></script>
+{% endblock%}
+
+{% block form%}
+     <div class="thead">
+        <a href="/login/" class="login_a">快捷登录</a>
+        <a href="/register/" class="regsiter_a">快捷注册</a>
+      </div>
+     <form action="/register/" method="post" id="formReg">
+       {% csrf_token %}
+          <div class="form-line">
+            <p>账号:</p>
+            <div>
+              <input type="text" name="uphone" id="uphone" class="form-control">
+              <div id="phonemsg">{{msg}}</div>
+            </div>
+          </div>
+          <div class="form-line">
+            <p>密码:</p>
+            <div>
+              <input type="password" name="upwd" id ='upwd' class="form-control">
+            </div>
+          </div>
+          <div class="form-line">
+            <p>确认密码</p>
+            <div>
+              <input type="password" name="uupwd" id ='uupwd' class="form-control">
+            </div>
+          </div>
+          <div class="form-line">
+            <p></p>
+            <div>
+              <input type="submit" value="同意协议并注册" class="btnLogin">
+              <a href="#" class="xieyi">注册协议</a>
+            </div>
+          </div>
+        </form>
+{% endblock%}

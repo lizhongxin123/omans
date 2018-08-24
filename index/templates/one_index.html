@@ -1,0 +1,147 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>INDEX</title>
+
+  <link rel="stylesheet" href="../static/css/index.css">
+
+  <!--<script src="/static/js/oneindex.js"></script>-->
+  <script src="/static/js/jquery-1.11.3.js"></script>
+  <script src="/static/js/comment.js"></script>
+</head>
+
+<script>
+//  alert('t1');
+  $(function(){
+//    alert('t2');
+    search_info();
+  });
+
+  //搜索
+  function search_info(){
+  $('.header-search-btn').click(function(){
+//    alert('t3');
+    var xhr = getXhr();
+    var url = '/search/?val='+ $('.header-search-input').val();
+    xhr.open('get',url,true);
+    xhr.onreadystatechange = function(){
+//      alert('t4');
+      if (xhr.readyState==4 && xhr.status==200){
+//        alert('t5');
+          var val = xhr.responseText;
+          alert(val);
+          if (val=='获取数据成功'){
+            location.reload();
+          }
+      }};
+    xhr.send(null)
+  });
+  }
+</script>
+
+<body id="main">
+  <!--头部-->
+  <header class="com-header">
+    <div class="header-bar">
+      <div class="header-content clearfix">
+        <div class="header-bar-position" style="display: block;">
+          <span class="header-icon icon-header_location">
+          </span>
+          <a class="current-city" href="/quit/">退出登录</a>
+          <div class="user-entry">
+            <a class="login" id = 'uphone'>用户名:{{uphone}}</a>
+            <a class='register' id = 'position'>当前位置:{{adress}}</a>
+          </div>
+        </div>
+        <nav class="header-bar-nav">
+          <ul class="header-nav-first">
+            <li class="has-child1">
+              <a href="#">我的位置</a>
+              <ul>
+                {% for adr in patterns %}
+                <li><a href="#">{{adr.adress}}</a></li>
+                {% endfor%}
+              </ul>
+            </li>
+            <li class="has-child2">
+              <a href="#">手机app</a>
+            </li>
+            <li class="has-child3">
+              <a href="#">我的需求</a>
+              <ul>
+                <li><a href="#">生活服务</a></li>
+                <li><a href="#">医疗健康</a></li>
+              </ul>
+            </li>
+            <li class="has-child4">
+              <a href="#">网站导航</a>
+              <ul>
+                <li><a href="www.taobao.com">购物</a></li>
+                <li><a href="www.gaode.con">交通</a></li>
+                <li><a href="www.meituan.com">外卖</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <div class="header-content clearfix">
+      <div class="header-title-module">
+        <div class="header-title">
+          <a href="https://www.baidu.com">
+            <img src="../static/images/CGD.jpg" id="CGDIMG" width="40px" height="40px">
+          </a>
+        </div>
+      </div>
+      <div class="header-search-module">
+        <div class="header-search-block">
+          <input class='header-search-input' type="text" placeholder="搜索当地">
+          <button class="header-search-btn">
+            <span class="header-icon icon-search"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!--主体-->
+  <div id="react">
+    <div class="index-container">
+      <div class="infos_life">
+        <h2>生活服务</h2>
+        <ul>
+        {% for info in infos_life %}
+          <li class="infoshow">
+            {% if forloop.counter <= 20 %}
+              <span>{{forloop.counter}}.</span>
+              <span>{{info.secondLevel}}</span>
+              <span>{{info.title}}</span>
+              <span>{{info.address}}</span>
+            {% endif %}
+          </li>
+        {% endfor %}
+        </ul>
+      </div>
+      <div class="info_med">
+        <h2>医疗健康</h2>
+        <ul>
+        {% for info in info_med %}
+          <li class="infoshow">
+            {% if forloop.counter <= 20 %}
+              <span>{{forloop.counter}}.</span>
+              <span>{{info.secondLevel}}</span>
+              <span>{{info.title}}</span>
+              <span>{{info.address}}</span>
+            {% endif %}
+          </li>
+        {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!--尾部-->
+  <footer class="com-footer"></footer>
+</body>
+</html>

@@ -1,0 +1,227 @@
+body,div,a,header,input,ul,li,footer,button{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  vertical-align: middle;
+  list-style: none;
+}
+body{
+  background-color: #f8f8f8;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+/*头部*/
+.com-header{
+  background: #fff;
+  box-shadow: 0 2px 27px 0 rgba(0,0,0,.1);
+}
+
+/*头部-标签*/
+.header-bar{
+  width: 100%;
+  color: #999;
+  height: 30px;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+/*.com-header .header-content{*/
+  /*overflow: hidden;*/
+  /*width: 1190px;*/
+  /*margin: 0 auto;*/
+/*}*/
+.header-bar-position{
+  margin-left: 20px;
+  float:left;
+  padding-top:18px;
+  line-height: 51px;
+}
+.header-bar .header-bar-nav{
+  float:right;
+  display: block;
+}
+.header-icon {
+  font-size: 18px;
+  font-style: normal;
+}
+.header-bar .current-city{
+  color: #666;
+}
+.header-bar .header-bar-position .user-entry{
+  display: inline-block;
+  margin-left: 15px;
+}
+.header-bar .header-bar-position .user-entry a{
+  margin-left: 10px;
+}
+ul{
+  display: block;
+  list-style-type: disc;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-start: 40px;
+}
+li{
+  display:list-item;
+  text-align:-webkit-match-parent;
+}
+.header-bar .header-nav-first>li {
+  float:left;
+  position:relative;
+  height:150px;
+  padding:12px 14px;
+  box-sizing:border-box;
+  border-left:1px solid transparent;
+  border-right:1px solid transparent;
+}
+.header-bar .header-nav-first>li>ul {
+  visibility: hidden;
+  position:absolute;
+  top: 22px;
+  left: -8px;
+}
+.header-bar .header-nav-first>li>ul>li{
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+.header-bar .has-child1:hover>ul{
+  visibility:visible;
+}
+.header-bar .has-child2:hover>ul {
+  visibility: visible;
+}
+.header-bar .has-child3:hover>ul {
+  visibility: visible;
+}
+.header-bar .has-child4:hover>ul {
+  visibility: visible;
+}
+
+
+/*头部标签-搜索*/
+.com-header .header-content{
+  overflow: hidden;
+  width:960px;
+  padding-bottom: 20px;
+  margin: 0 auto;
+}
+.clearfix:after, .clearfix:before{
+  content: " ";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+.com-header .header-content .header-title-module{
+  padding-right: 10px;
+  min-width: 100px;
+}
+.com-header .header-title-module{
+  float: left;
+  padding-top: 28px;
+  padding-bottom: 40px;
+  font-size: 16px;
+  height: 54px;
+  box-sizing: content-box;
+}
+
+
+.com-header .header-title-module .header-title{
+  margin-left:20px;
+  margin-top: -2px;
+  display: inline-block;
+}
+
+.com-header .header-search-module{
+  float: left;
+  padding-top: 28px;
+  position: relative;
+}
+
+.com-header .header-search-module .header-search-block{
+  width: 420px;
+  height:40px;
+  border: 1px solid #13d1be;
+  background: #fff;
+  border-radius:4px;
+}
+
+.com-header .header-search-module .header-search-block .header-search-input{
+  border: none;
+  line-height: 100%;
+  box-sizing: border-box;
+  display: inline-block!important;
+  padding: 10px;
+  font-size: 15px;
+  height: 100%;
+  background: 0 0;
+  width:84%;
+  outline: 0;
+}
+
+.com-header .header-search-module .header-search-block .header-search-btn{
+  outline: 0;
+  width: 16%;
+  box-sizing: border-box;
+  line-height: 100%;
+  height: 100%;
+  background-color: #13d1be;
+  border: none;
+  float: right;
+  color: #fff;
+  cursor: pointer;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+button{
+  text-align: center;
+  align-items: flex-start;
+  text-rendering: auto;
+  letter-spacing: normal;
+  text-transform: none;
+  text-indent: 0;
+  display: inline-block;
+  font:400 13.333px Arial;
+  -webkit-writing-mode: horizontal-tb !important;
+  -webkit-appearance: button;
+}
+.com-header .header-icon{
+  font-family: com_header!important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+}
+.icon-search:before{
+  content:'\e611'
+}
+
+
+/*主体*/
+.index-container{
+  width:940px;
+  margin: 0 auto;
+  text-align: left;
+}
+.index-container li{
+  margin-bottom: 10px;
+}
+.index-container span{
+  margin-right: 10px;
+}
+
+/*主体一*/
+.infos_life{
+  background-color: #9eff70;
+  width:950px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/*主体二*/
+.info_med{
+  background-color: #ffdadd;
+  width: 950px;
+  margin: 40px auto;
+}
+
